@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio creativo de desarrollo web">
+  <title>Mi universo creativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Decoración del fondo -->
+  <div class="decor decor-circle"></div>
+  <div class="decor decor-circle-two"></div>
+  <div class="decor decor-ring"></div>
+  <div class="decor decor-heart">♡</div>
+  <div class="decor decor-sparkle">✦</div>
+  <div class="decor decor-sparkle-two">✧</div>
+  <div class="decor decor-flower">✿</div>
+  <div class="decor decor-star-small">✧</div>
+
+  <!-- ESTRELLA GIGANTE: se conserva su forma y ubicación -->
+  <div class="giant-star" id="giantStar" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <polygon points="50,3 61,35 97,35 68,56 79,91 50,70 21,91 32,56 3,35 39,35"/>
+    </svg>
+  </div>
+
+  <main class="main-layout">
+
+    <!-- Navegación solo con figuras y números -->
+    <aside class="sidebar">
+      <p class="nav-caption">✧ MI UNIVERSO ✧</p>
+
+      <nav class="navigation" aria-label="Navegación principal">
+
+        <button class="nav-item active" data-section="sobre-mi"
+                aria-label="01. Sobre mí" aria-pressed="true">
+          <span class="nav-shape heart-shape">01</span>
+        </button>
+
+        <button class="nav-item" data-section="habilidades"
+                aria-label="02. Habilidades" aria-pressed="false">
+          <span class="nav-shape star-shape">02</span>
+        </button>
+
+        <button class="nav-item" data-section="proyectos"
+                aria-label="03. Proyectos" aria-pressed="false">
+          <span class="nav-shape heart-shape">03</span>
+        </button>
+
+        <button class="nav-item" data-section="galeria"
+                aria-label="04. Galería" aria-pressed="false">
+          <span class="nav-shape star-shape">04</span>
+        </button>
+
+        <button class="nav-item" data-section="contacto"
+                aria-label="05. Contacto" aria-pressed="false">
+          <span class="nav-shape heart-shape">05</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-note">
+        <span>♡</span>
+        <p>Un universo de ideas, código y creatividad.</p>
+      </div>
+
+      <div class="sidebar-decoration">✧ ♡ ✿</div>
+    </aside>
+
+    <!-- Contenido -->
+    <section class="content">
+
+      <div class="eyebrow">
+        <span></span>
+        PORTAFOLIO DE DESARROLLO WEB
+        <span class="eyebrow-star">✦</span>
+      </div>
+
+      <div class="hero">
+        <div>
+          <p class="hello">¡Hola, mundo! Soy</p>
+          <h1>Tu nombre<span class="pink">.</span></h1>
+          <p class="subtitle">
+            Desarrolladora web en formación <span>♡</span>
+          </p>
+        </div>
+
+        <div class="hero-decoration">
+          <span>✳</span>
+          <p>creado con<br><b>mucho amor</b></p>
+        </div>
+      </div>
+
+      <div class="progress-area">
+        <span id="sectionCounter">01 / 05</span>
+        <div class="progress-track">
+          <div id="progressBar"></div>
+        </div>
+        <span class="progress-star">✦</span>
+      </div>
+
+      <!-- 01: SOBRE MÍ -->
+      <article class="panel active" id="sobre-mi">
+        <div class="section-heading">
+          <span class="heading-icon">♡</span>
+          <h2>Un poquito sobre mí</h2>
+        </div>
+
+        <p class="lead">
+          Me gusta transformar ideas en experiencias digitales
+          bonitas, creativas y fáciles de utilizar.
+        </p>
+
+        <p class="description">
+          Actualmente estoy aprendiendo desarrollo web en Skillnest.
+          Me interesa explorar nuevas tecnologías, diseñar interfaces
+          y descubrir todo lo que puedo crear con código.
+          Este portafolio representa mi proceso, mis aprendizajes
+          y los proyectos que iré construyendo en el camino.
+        </p>
+
+        <div class="profile-photo">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85"
+            alt="Espacio de trabajo con computador y código"
+            loading="lazy">
+          <span class="photo-sticker">♡ keep<br>creating ♡</span>
+          <span class="photo-caption">IDEAS QUE SE CONVIERTEN EN REALIDAD ✧</span>
+        </div>
+
+        <div class="chips">
+          <span>♡ Creatividad</span>
+          <span>✧ Curiosidad</span>
+          <span>✿ Aprendizaje</span>
+        </div>
+
+        <div class="pink-note">
+          <span>✦</span>
+          <p><b>Mi meta:</b> crecer como desarrolladora y crear proyectos
+          que combinen utilidad, creatividad y personalidad.</p>
+        </div>
+
+        <div class="quote-decoration">
+          <span>“</span>
+          <p>Cada línea de código es una oportunidad para aprender algo nuevo.</p>
+          <span class="quote-heart">♡</span>
+        </div>
+      </article>
+
+      <!-- 02: HABILIDADES -->
+      <article class="panel" id="habilidades">
+        <div class="section-heading">
+          <span class="heading-icon">✿</span>
+          <h2>Mi caja de herramientas</h2>
+        </div>
+
+        <p class="description">
+          Estas son las tecnologías y herramientas que estoy aprendiendo
+          y utilizando para construir mis proyectos.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <span class="skill-logo html-logo">5</span>
+            <div><h3>HTML</h3><p>Estructura web</p></div>
+            <span class="skill-sparkle">✦</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-logo css-logo">✿</span>
+            <div><h3>CSS</h3><p>Estilos y diseño</p></div>
+            <span class="skill-sparkle">✦</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-logo js-logo">JS</span>
+            <div><h3>JavaScript</h3><p>Interactividad</p></div>
+            <span class="skill-sparkle">✦</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-logo git-logo">⌘</span>
+            <div><h3>Git</h3><p>Control de versiones</p></div>
+            <span class="skill-sparkle">✦</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-logo github-logo">◉</span>
+            <div><h3>GitHub</h3><p>Repositorios</p></div>
+            <span class="skill-sparkle">✦</span>
+          </div>
+
+          <div class="skill-card future-card">
+            <span class="skill-logo">＋</span>
+            <div><h3>Próximamente</h3><p>Más por aprender</p></div>
+          </div>
+        </div>
+
+        <div class="skill-banner">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+            alt="Computador portátil utilizado para trabajar"
+            loading="lazy">
+          <div>
+            <span>MI PROCESO ✧</span>
+            <h3>Aprender, probar y volver a crear.</h3>
+            <p>Cada desafío me ayuda a avanzar un poquito más.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03: PROYECTOS -->
+      <article class="panel" id="proyectos">
+        <div class="section-heading">
+          <span class="heading-icon">✧</span>
+          <h2>Mis proyectos</h2>
+        </div>
+
+        <p class="description">
+          Una selección de ideas que he convertido en proyectos.
+          Cada uno representa un nuevo desafío y aprendizaje.
+        </p>
+
+        <div class="project-filters" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" data-filter="todos">Todos ♡</button>
+          <button class="filter-btn" data-filter="web">Desarrollo web</button>
+          <button class="filter-btn" data-filter="creativo">Creatividad</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <div class="project-card" data-category="web">
+            <div class="project-cover cover-green">
+              <img
+                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80"
+                alt="Paisaje verde y montañas"
+                loading="lazy">
+              <span class="cover-label">01 · WEB</span>
+              <span class="cover-symbol">✿</span>
+            </div>
+
+            <div class="project-body">
+              <span class="project-type">PROYECTO WEB</span>
+              <h3>Nova Green</h3>
+              <p>Una propuesta digital sobre sostenibilidad,
+              reciclaje y cuidado del medioambiente.</p>
+
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+                <a href="#" class="demo-link">Ver proyecto ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="creativo">
+            <div class="project-cover cover-pink">
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                alt="Espacio de trabajo creativo"
+                loading="lazy">
+              <span class="cover-label">02 · CREATIVO</span>
+              <span class="cover-symbol">♡</span>
+            </div>
+
+            <div class="project-body">
+              <span class="project-type">DISEÑO Y CREATIVIDAD</span>
+              <h3>Mi próximo proyecto</h3>
+              <p>Reemplaza esta tarjeta con otro trabajo,
+              ejercicio o desafío que hayas realizado.</p>
+
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+                <a href="#" class="demo-link">Ver proyecto ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="web">
+            <div class="project-cover cover-purple">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+                alt="Personas trabajando en un proyecto tecnológico"
+                loading="lazy">
+              <span class="cover-label">03 · EN PROCESO</span>
+              <span class="cover-symbol">✧</span>
+            </div>
+
+            <div class="project-body">
+              <span class="project-type">PRÁCTICA WEB</span>
+              <h3>Proyecto por agregar</h3>
+              <p>Describe qué construiste, qué problema resolviste
+              y qué aprendiste durante el desarrollo.</p>
+
+              <div class="project-tags">
+                <span>JavaScript</span><span>Git</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+                <a href="#" class="demo-link">Ver proyecto ↗</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- 04: GALERÍA -->
+      <article class="panel" id="galeria">
+        <div class="section-heading">
+          <span class="heading-icon">♡</span>
+          <h2>Mi inspiración visual</h2>
+        </div>
+
+        <p class="description">
+          Un pequeño rincón para reunir ideas, espacios y detalles
+          que inspiran mi proceso creativo. También puedes usarlo
+          para mostrar capturas de tus trabajos.
+        </p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-tall">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85"
+              alt="Computador y espacio de desarrollo"
+              loading="lazy">
+            <figcaption><span>01</span> Creando ideas ✧</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+              alt="Espacio de trabajo luminoso"
+              loading="lazy">
+            <figcaption><span>02</span> Mi espacio creativo</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+              alt="Trabajo digital en un portátil"
+              loading="lazy">
+            <figcaption><span>03</span> Aprender haciendo ♡</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-wide">
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
+              alt="Equipo colaborando en un proyecto"
+              loading="lazy">
+            <figcaption><span>04</span> Ideas que crecen juntas</figcaption>
+          </figure>
+        </div>
+
+        <div class="pink-note">
+          <span>✦</span>
+          <p>Las imágenes son ilustrativas. Puedes reemplazarlas por
+          capturas de tus propios proyectos para personalizar la galería.</p>
+        </div>
+      </article>
+
+      <!-- 05: CONTACTO -->
+      <article class="panel" id="contacto">
+        <div class="section-heading">
+          <span class="heading-icon">♡</span>
+          <h2>¡Hablemos!</h2>
+        </div>
+
+        <div class="contact-illustration">
+          <img
+            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85"
+            alt="Retrato de una persona"
+            loading="lazy">
+          <span class="contact-sticker">nice to<br>meet you ♡</span>
+        </div>
+
+        <p class="lead">
+          Siempre hay espacio para aprender, compartir ideas y crear algo nuevo.
+        </p>
+
+        <div class="contact-card">
+          <span class="contact-icon">✉</span>
+          <div>
+            <small>MI CORREO PROFESIONAL</small>
+            <b id="emailText">tu.correo@ejemplo.com</b>
+          </div>
+          <button id="copyEmail" type="button">Copiar</button>
+        </div>
+
+        <a class="linkedin-card"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noreferrer">
+          <span class="linkedin-icon">in</span>
+          <span>
+            <b>Mi perfil de LinkedIn</b>
+            <small>Conectemos profesionalmente</small>
+          </span>
+          <span class="linkedin-arrow">↗</span>
+        </a>
+
+        <div class="final-message">
+          <span>✧</span>
+          <p>Gracias por visitar mi pequeño universo creativo.</p>
+          <span>♡</span>
+        </div>
+      </article>
+
+      <footer class="footer">
+        <span>HECHO CON <b>♡</b> Y MUCHA CREATIVIDAD</span>
+        <span>© <span id="year"></span> · TU NOMBRE</span>
+      </footer>
+
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
