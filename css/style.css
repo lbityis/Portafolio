@@ -1246,11 +1246,6 @@ h2 {
   }
 }
 
-/* =========================================================
-   EXTRAS: se carga DESPUÉS de style.css
-   Movimiento, profundidad y tipografía más cuidada
-   ========================================================= */
-
 /* ---------- Detalles generales ---------- */
 
 ::selection { background: var(--rosa); color: white; }
@@ -1537,4 +1532,445 @@ h2 { font-weight: 600; letter-spacing: -.5px; }
   h1 .pink, .decor, .giant-star svg, .hero-decoration > span,
   .photo-sticker, .contact-sticker, #progressBar,
   .nav-item.active .nav-shape { animation: none !important; }
+}
+
+/* Manchas de color tipo aurora (detrás de todo) */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: .55;
+  animation: blob-move 20s ease-in-out infinite;
+}
+
+.blob-1 { width: 540px; height: 540px; background: #ffc2dd; top: -12%; right: 8%; }
+.blob-2 { width: 480px; height: 480px; background: #e4d2ff; bottom: -18%; left: 28%; animation-duration: 26s; animation-delay: -8s; }
+.blob-3 { width: 400px; height: 400px; background: #ffdcc4; top: 38%; right: -10%; animation-duration: 23s; animation-delay: -4s; }
+
+@keyframes blob-move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, 40px) scale(1.12); }
+  66% { transform: translate(40px, -30px) scale(.94); }
+}
+
+/* Escena de brillos, corazones, puntos y líneas */
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Cuadrículas de puntos */
+.bg-scene::before,
+.bg-scene::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background-image: radial-gradient(#e89cbd 1.6px, transparent 1.8px);
+  background-size: 20px 20px;
+  opacity: .55;
+  -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 25%, transparent 72%);
+}
+.bg-scene::before { right: 3%; top: 50%; }
+.bg-scene::after { left: 31%; bottom: 2%; }
+
+/* Brillos y símbolos */
+.bg-glyph {
+  position: absolute;
+  line-height: 1;
+  user-select: none;
+  translate:
+    calc(var(--px, 0) * var(--depth, 0) * 1px)
+    calc(var(--py, 0) * var(--depth, 0) * 1px);
+  animation: var(--anim, bg-twinkle) var(--dur, 5s) ease-in-out var(--delay, 0s) infinite;
+}
+
+/* Puntitos de confeti */
+.bg-dot {
+  position: absolute;
+  border-radius: 50%;
+  translate:
+    calc(var(--px, 0) * var(--depth, 0) * 1px)
+    calc(var(--py, 0) * var(--depth, 0) * 1px);
+  animation: bg-twinkle var(--dur, 5s) ease-in-out var(--delay, 0s) infinite;
+}
+
+@keyframes bg-twinkle {
+  0%, 100% { opacity: .22; transform: scale(.75) rotate(0deg); }
+  50% { opacity: .95; transform: scale(1.15) rotate(25deg); }
+}
+
+@keyframes bg-float {
+  0%, 100% { opacity: .75; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 1; transform: translateY(-18px) rotate(14deg); }
+}
+
+/* Corazones y flores que suben lentamente */
+.bg-rise {
+  position: absolute;
+  bottom: -50px;
+  line-height: 1;
+  opacity: 0;
+  animation: bg-rise-up linear infinite;
+}
+
+@keyframes bg-rise-up {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  10% { opacity: .65; }
+  90% { opacity: .45; }
+  100% { opacity: 0; transform: translate(var(--sway, 0px), -118vh) rotate(180deg); }
+}
+
+/* Líneas onduladas punteadas */
+.bg-squiggle {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  fill: none;
+  stroke: #f2b3d0;
+  stroke-width: 2.4;
+  stroke-dasharray: 3 12;
+  stroke-linecap: round;
+  opacity: .7;
+  animation: dash-flow 14s linear infinite;
+}
+.bg-squiggle path { vector-effect: non-scaling-stroke; }
+.sq-1 { top: 60%; }
+.sq-2 { top: 8%; transform: scaleX(-1); animation-duration: 20s; }
+
+@keyframes dash-flow { to { stroke-dashoffset: -300; } }
+
+/* Formas grandes con solo contorno */
+.bg-big {
+  position: absolute;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.6px #f2b3d0;
+  opacity: .85;
+}
+.bg-big-flower {
+  font-size: 250px;
+  right: -60px;
+  bottom: 14px;
+  animation: spin 70s linear infinite;
+}
+.bg-big-heart {
+  font-size: 170px;
+  left: 33%;
+  bottom: -46px;
+  transform: rotate(-14deg);
+  animation: heart-sway 9s ease-in-out infinite;
+}
+
+@keyframes heart-sway {
+  0%, 100% { transform: rotate(-14deg) translateY(0); }
+  50% { transform: rotate(-6deg) translateY(-14px); }
+}
+
+/* Nombre principal: más grande, degradado que fluye y subrayado ondulado */
+h1 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 14px;
+  font-size: clamp(50px, 6.6vw, 88px);
+  letter-spacing: -2.5px;
+  background: linear-gradient(110deg, #43273a 0%, #cf3e85 38%, #ff8fc0 52%, #43273a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-flow 9s linear infinite;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 14%;
+  bottom: 0;
+  height: 14px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'><path d='M0 7 Q7 0 14 7 T28 7' fill='none' stroke='%23ec6eaa' stroke-width='3' stroke-linecap='round'/></svg>") repeat-x;
+  background-size: 28px 14px;
+  animation: wave 1.4s linear infinite;
+}
+
+@keyframes title-flow { to { background-position: 200% center; } }
+@keyframes wave { to { background-position-x: 28px; } }
+
+/* Saludo escrito a mano */
+.hello {
+  font-family: "Caveat", cursive;
+  font-size: 29px;
+  font-weight: 600;
+  color: var(--fucsia);
+  transform: rotate(-2deg);
+  transform-origin: left center;
+  margin-bottom: 0;
+}
+.hello::after {
+  content: "✿";
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--rosa);
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  animation: spin 9s linear infinite;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: .2px;
+  color: #7d4d69;
+}
+
+/* Etiqueta superior con más presencia */
+.eyebrow { color: #a8668a; }
+.eyebrow > span:first-child {
+  width: 42px;
+  background: linear-gradient(90deg, var(--rosa), transparent);
+}
+
+/* Títulos de sección: resaltador animado + número + línea punteada */
+.section-heading {
+  position: relative;
+  padding-top: 24px;
+  margin-bottom: 26px;
+}
+
+.section-heading::before {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font: 700 10px "Space Grotesk", sans-serif;
+  letter-spacing: 3px;
+  color: #b1839d;
+}
+#sobre-mi .section-heading::before { content: "✦ 01 · SOBRE MÍ"; }
+#habilidades .section-heading::before { content: "✦ 02 · HABILIDADES"; }
+#proyectos .section-heading::before { content: "✦ 03 · PROYECTOS"; }
+#galeria .section-heading::before { content: "✦ 04 · GALERÍA"; }
+#contacto .section-heading::before { content: "✦ 05 · CONTACTO"; }
+
+.section-heading::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  margin: 0 40px 0 8px;
+  background: repeating-linear-gradient(90deg, #f0a6c8 0 6px, transparent 6px 13px);
+}
+
+.heading-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 17px;
+  font-size: 27px;
+  color: white;
+  background: linear-gradient(145deg, #f7a2c7, #d43c84);
+  box-shadow: 0 10px 22px rgba(207, 62, 133, .35);
+  transform: rotate(-8deg);
+  animation: icon-wobble 5s ease-in-out infinite;
+}
+@keyframes icon-wobble {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(6deg) scale(1.08); }
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  padding: 0 8px;
+  color: #43273a;
+  background-image: linear-gradient(transparent 58%, #ffc6df 58%, #ffc6df 90%, transparent 90%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: marker .9s .35s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+@keyframes marker { to { background-size: 100% 100%; } }
+
+/* Títulos dentro de tarjetas */
+.project-body h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -.3px;
+}
+.skill-banner h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.lead {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(19px, 2.1vw, 23px);
+  font-weight: 500;
+  line-height: 1.6;
+  padding-left: 20px;
+  color: #43273a;
+  box-shadow: inset 3px 0 0 var(--rosa);
+  text-wrap: pretty;
+}
+
+.description { text-wrap: pretty; }
+
+/* Letra capital en "Un poquito sobre mí" */
+#sobre-mi .description::first-letter {
+  float: left;
+  font: 600 3.4em/.85 "Fraunces", Georgia, serif;
+  color: var(--fucsia);
+  padding: 6px 10px 0 0;
+}
+
+/* Marcador sobre "Mi meta:" */
+.pink-note b {
+  background: linear-gradient(transparent 58%, #ffc2de 58%);
+  padding: 0 3px;
+}
+
+/* Textos escritos a mano */
+.quote-decoration p {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+  line-height: 1.3;
+  color: #a05a80;
+}
+
+.final-message p {
+  font-family: "Caveat", cursive;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.photo-sticker {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  line-height: 1.1;
+}
+.contact-sticker {
+  font-family: "Caveat", cursive;
+  font-size: 18px;
+  line-height: 1.1;
+}
+.hero-decoration p {
+  font-family: "Caveat", cursive;
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+/* Cinta washi sobre las notas */
+.pink-note,
+.quote-decoration { position: relative; }
+
+.pink-note::before,
+.quote-decoration::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 28px;
+  width: 76px;
+  height: 20px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(246, 160, 198, .8) 0 7px,
+    rgba(255, 255, 255, .6) 7px 14px
+  );
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .07);
+  transform: rotate(-4deg);
+}
+.quote-decoration::before {
+  left: auto;
+  right: 40px;
+  transform: rotate(5deg);
+}
+
+/* Brillitos en las esquinas de cada sección */
+.panel { position: relative; }
+.panel::after {
+  content: "✦";
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  font-size: 30px;
+  color: var(--rosa);
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+.panel::before {
+  content: "♡";
+  position: absolute;
+  right: -16px;
+  top: 42%;
+  font-size: 26px;
+  color: #f0a6c8;
+  pointer-events: none;
+  animation: float 5.5s ease-in-out infinite reverse;
+}
+
+/* Cinta con texto que se desplaza (se crea desde JS) */
+.ribbon {
+  margin: 48px -10px 0;
+  overflow: hidden;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(90deg, #ec6eaa, #cf3e85, #ec6eaa);
+  box-shadow: 0 12px 26px rgba(207, 62, 133, .28);
+  transform: rotate(-1.6deg);
+}
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  padding: 13px 0;
+  font: 600 14px "Space Grotesk", sans-serif;
+  letter-spacing: 3px;
+  animation: marquee 26s linear infinite;
+}
+.ribbon-track span { padding: 0 20px; white-space: nowrap; }
+.ribbon:hover .ribbon-track { animation-play-state: paused; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------------------------------------------------------
+   5. CELULAR
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+  .bg-big,
+  .panel::before { display: none; }
+
+  .section-heading::after { display: none; }
+
+  h2 { font-size: 28px; }
+  h1 { font-size: 50px; }
+  .hello { font-size: 25px; }
+  .ribbon { margin-inline: 0; }
+  .blob { opacity: .4; }
+}
+
+/* ---------------------------------------------------------
+   6. ACCESIBILIDAD
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .blob, .bg-glyph, .bg-dot, .bg-rise, .bg-squiggle, .bg-big,
+  .heading-icon, .hello::after, .ribbon-track,
+  h1, h1::after, .panel::before, .panel::after { animation: none !important; }
+
+  h2 { animation: none; background-size: 100% 100%; }
+  .bg-rise { display: none; }
 }
