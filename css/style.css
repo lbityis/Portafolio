@@ -31,14 +31,14 @@ body {
 button, a { font: inherit; }
 a { color: inherit; }
 
-/* ESTRELLA GIGANTE: FORMA Y UBICACIÓN SIN CAMBIOS */
+/* ESTRELLA GIGANTE*/
 
 .giant-star {
   position: fixed;
   z-index: -1;
   width: min(59vw, 790px);
   height: min(59vw, 790px);
-  left: -26%;
+  left: -22%;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
   transform-origin: center;
@@ -147,6 +147,7 @@ a { color: inherit; }
 .main-layout {
   width: min(1200px, 100%);
   margin: auto;
+  margin-left: 400px;
   padding: 65px 45px 35px;
   display: grid;
   grid-template-columns: 245px minmax(0, 1fr);
@@ -1243,4 +1244,297 @@ h2 {
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* =========================================================
+   EXTRAS: se carga DESPUÉS de style.css
+   Movimiento, profundidad y tipografía más cuidada
+   ========================================================= */
+
+/* ---------- Detalles generales ---------- */
+
+::selection { background: var(--rosa); color: white; }
+
+html { scrollbar-width: thin; scrollbar-color: var(--rosa-medio) transparent; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--rosa-medio);
+  border-radius: 10px;
+  border: 2px solid var(--fondo);
+}
+
+/* Textura de grano muy sutil para dar sensación de papel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Tipografía con más carácter ---------- */
+
+h1, h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+h1 {
+  font-weight: 600;
+  letter-spacing: -2px;
+  background: linear-gradient(110deg, #43273a 35%, #cf3e85 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+h1 .pink {
+  -webkit-text-fill-color: var(--fucsia);
+  display: inline-block;
+  animation: dot-bounce 2.4s ease-in-out infinite;
+}
+
+h2 { font-weight: 600; letter-spacing: -.5px; }
+
+@keyframes dot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Texto más legible en escritorio (lo tenías en 8–10px) */
+@media (min-width: 651px) {
+  .nav-caption, .eyebrow { font-size: 10px; }
+  .description { font-size: 13.5px; color: #7d5a6e; line-height: 1.95; }
+  .lead { font-size: 17px; }
+  .chips span { font-size: 12px; padding: 10px 16px; }
+  .sidebar-note p { font-size: 11px; }
+  .pink-note { font-size: 12.5px; }
+  .quote-decoration p { font-size: 13.5px; }
+  .skill-card h3 { font-size: 13.5px; }
+  .skill-card p { font-size: 11px; }
+  .skill-banner p { font-size: 11.5px; }
+  .project-body p { font-size: 12px; }
+  .project-tags span { font-size: 10px; }
+  .project-links a { font-size: 11px; }
+  .filter-btn { font-size: 11px; }
+  .contact-card small { font-size: 9px; }
+  .contact-card b { font-size: 13px; }
+  .footer { font-size: 9px; }
+}
+
+/* ---------- Decoraciones vivas ---------- */
+
+.decor-heart { animation: heart-float 7s ease-in-out infinite; }
+.decor-circle { animation: soft-pulse 9s ease-in-out infinite; }
+.decor-circle-two { animation: drift 8s ease-in-out infinite; }
+.decor-ring { animation: spin 40s linear infinite; }
+.giant-star svg { animation: soft-pulse 9s ease-in-out infinite; }
+
+@keyframes heart-float {
+  0%, 100% { transform: translateY(0) rotate(14deg) scale(1); }
+  50% { transform: translateY(-16px) rotate(6deg) scale(1.07); }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -14px); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-decoration {
+  transition: transform .5s cubic-bezier(.3, 1.6, .5, 1), box-shadow .3s;
+  cursor: default;
+}
+.hero-decoration:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 10px 12px 0 #f6c9de;
+}
+.hero-decoration > span {
+  display: inline-block;
+  animation: spin 14s linear infinite;
+}
+
+.photo-sticker,
+.contact-sticker { animation: wobble 4.5s ease-in-out infinite; }
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(9deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.06); }
+}
+
+/* ---------- Entrada escalonada al cambiar de sección ---------- */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel.active > * {
+  animation: rise .7s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+.panel.active > *:nth-child(1) { animation-delay: .05s; }
+.panel.active > *:nth-child(2) { animation-delay: .12s; }
+.panel.active > *:nth-child(3) { animation-delay: .19s; }
+.panel.active > *:nth-child(4) { animation-delay: .26s; }
+.panel.active > *:nth-child(5) { animation-delay: .33s; }
+.panel.active > *:nth-child(6) { animation-delay: .40s; }
+.panel.active > *:nth-child(7) { animation-delay: .47s; }
+
+/* Tarjetas que aparecen una tras otra */
+.panel.active .skill-card,
+.panel.active .project-card,
+.panel.active .gallery-item {
+  animation: rise .6s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+.panel.active .skill-card:nth-child(1), .panel.active .project-card:nth-child(1), .panel.active .gallery-item:nth-child(1) { animation-delay: .25s; }
+.panel.active .skill-card:nth-child(2), .panel.active .project-card:nth-child(2), .panel.active .gallery-item:nth-child(2) { animation-delay: .33s; }
+.panel.active .skill-card:nth-child(3), .panel.active .project-card:nth-child(3), .panel.active .gallery-item:nth-child(3) { animation-delay: .41s; }
+.panel.active .skill-card:nth-child(4), .panel.active .project-card:nth-child(4), .panel.active .gallery-item:nth-child(4) { animation-delay: .49s; }
+.panel.active .skill-card:nth-child(5) { animation-delay: .57s; }
+.panel.active .skill-card:nth-child(6) { animation-delay: .65s; }
+
+/* ---------- Profundidad: vidrio + sombras en capas ---------- */
+
+.sidebar-note,
+.skill-card,
+.skill-banner,
+.contact-card,
+.linkedin-card,
+.quote-decoration {
+  background: rgba(255, 255, 255, .55);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow:
+    0 1px 2px rgba(173, 62, 119, .06),
+    0 8px 24px rgba(173, 62, 119, .08);
+}
+
+.quote-decoration { border: 1px dashed #edb4cf; }
+
+.project-card {
+  box-shadow:
+    0 2px 4px rgba(173, 62, 119, .06),
+    0 14px 34px rgba(173, 62, 119, .10);
+}
+.project-card:hover {
+  box-shadow:
+    0 4px 8px rgba(173, 62, 119, .08),
+    0 22px 44px rgba(173, 62, 119, .18);
+}
+
+.profile-photo {
+  transition: transform .25s ease-out, box-shadow .3s;
+  box-shadow:
+    0 2px 6px rgba(173, 62, 119, .08),
+    0 22px 50px rgba(173, 62, 119, .20);
+  will-change: transform;
+}
+
+.contact-illustration {
+  transition: transform .25s ease-out;
+  will-change: transform;
+}
+
+/* ---------- Hover con vida ---------- */
+
+.chips span {
+  cursor: default;
+  transition: transform .35s cubic-bezier(.3, 1.6, .5, 1), background .3s, color .3s, box-shadow .3s;
+}
+.chips span:hover {
+  transform: translateY(-4px) rotate(-3deg);
+  color: white;
+  background: linear-gradient(135deg, #f5a2c8, #cf3e85);
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(207, 62, 133, .28);
+}
+
+.filter-btn { transition: transform .3s cubic-bezier(.3, 1.6, .5, 1), background .25s, color .25s; }
+.filter-btn:hover { transform: translateY(-2px) scale(1.05); }
+
+.project-tags span { transition: transform .25s, background .25s, color .25s; }
+.project-card:hover .project-tags span { background: #ffe0ee; }
+.project-tags span:hover { transform: translateY(-2px); background: var(--fucsia) !important; color: white; }
+
+.skill-logo { transition: transform .4s cubic-bezier(.3, 1.6, .5, 1); }
+.skill-card:hover .skill-logo { transform: rotate(-12deg) scale(1.15); }
+.skill-card:hover .skill-sparkle { animation: spin 1.2s linear infinite; display: inline-block; }
+
+.contact-card button,
+.linkedin-card { transition: transform .25s, background .25s, border-color .25s, box-shadow .25s; }
+.contact-card button:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(146, 40, 93, .3); }
+.contact-card button:active { transform: scale(.95); }
+
+/* Menú numerado: resplandor en el activo */
+.nav-item.active .nav-shape { animation: pulse-soft 2.4s ease-in-out infinite; }
+.nav-item:hover .nav-shape { color: var(--fucsia); }
+.nav-item.active:hover .nav-shape { color: white; }
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.09); }
+}
+
+/* Barra de progreso con brillo que se desliza */
+#progressBar {
+  background: linear-gradient(90deg, #f5a2c8, #cf3e85, #f5a2c8);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* ---------- Máquina de escribir ---------- */
+
+.typed::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -2px;
+  background: var(--fucsia);
+  animation: blink .8s steps(1) infinite;
+}
+.typed.done::after { display: none; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- Rastro de brillos del cursor ---------- */
+
+.trail {
+  position: fixed;
+  z-index: 30;
+  pointer-events: none;
+  font-size: var(--size, 14px);
+  color: var(--rosa);
+  transform: translate(-50%, -50%);
+  animation: trail .9s ease-out forwards;
+  text-shadow: 0 0 8px rgba(236, 110, 170, .6);
+}
+
+@keyframes trail {
+  from { opacity: .95; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  to {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + 34px)) scale(.3) rotate(120deg);
+  }
+}
+
+/* ---------- Accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .trail { display: none; }
+  h1 .pink, .decor, .giant-star svg, .hero-decoration > span,
+  .photo-sticker, .contact-sticker, #progressBar,
+  .nav-item.active .nav-shape { animation: none !important; }
 }
