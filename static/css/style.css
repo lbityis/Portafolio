@@ -1974,3 +1974,104 @@ h2 {
   h2 { animation: none; background-size: 100% 100%; }
   .bg-rise { display: none; }
 }
+
+/* ==========================================================
+   DISEÑO ORDENADO (estrella original conservada)
+   Encabezado arriba | estrella + menú a la izquierda | contenido a la derecha
+   ========================================================== */
+
+/* ---------- ESCRITORIO ---------- */
+@media (min-width: 951px) {
+
+  :root {
+    --star: clamp(230px, 22vw, 330px);  /* tamaño de la estrella */
+    --menu: 150px;                      /* ancho de la columna del menú */
+  }
+
+  /* Tu estrella original (misma función y animación),
+     solo cambia su tamaño y posición: abajo del nombre, a la izquierda */
+  .giant-star {
+    width: var(--star);
+    height: var(--star);
+    left: calc((100vw - min(1280px, 100vw)) / 2 + 45px);
+    top: 50%;
+  }
+
+  .main-layout {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 55px 45px 40px;
+    display: grid;
+    grid-template-columns: calc(var(--star) + var(--menu) + 20px) minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "menu   content";
+    column-gap: 50px;
+    row-gap: 40px;
+    align-items: start;
+  }
+
+  /* 1. Encabezado: eyebrow, nombre, subtítulo y barra 01/05 */
+  .page-header {
+    grid-area: header;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* 2. Menú: queda a la derecha del espacio de la estrella */
+  .sidebar {
+    grid-area: menu;
+    position: sticky;
+    top: 30px;
+    padding-top: 0;
+    padding-left: calc(var(--star) + 20px);
+  }
+
+  /* 3. Contenido a un lado, a la derecha */
+  .content {
+    grid-area: content;
+    padding-left: 0;
+    min-width: 0;
+  }
+}
+
+/* ---------- TABLET Y CELULAR: todo en una columna ---------- */
+@media (max-width: 950px) {
+
+  .main-layout {
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "menu"
+      "content";
+    row-gap: 28px;
+  }
+
+  .page-header {
+    grid-area: header;
+    margin: 0;
+    max-width: none;
+  }
+
+  .sidebar {
+    grid-area: menu;
+    position: relative;
+    top: auto;
+    padding: 0;
+  }
+
+  .content {
+    grid-area: content;
+    padding-left: 0;
+  }
+
+  .navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
