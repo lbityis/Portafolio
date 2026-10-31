@@ -1,510 +1,476 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio creativo de Elisa Soto, desarrolladora web en formación."
+    />
+    <title>Elisa Soto | Portafolio creativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="floating-decor decor-heart" aria-hidden="true">♡</div>
+    <div class="floating-decor decor-flower" aria-hidden="true">✿</div>
+    <div class="floating-decor decor-sparkle" aria-hidden="true">✦</div>
+    <div class="pink-sky" aria-hidden="true">
+      <span>♡</span><span>✦</span><span>✿</span><span>♡</span><span>✧</span><span>❀</span><span>♡</span><span>✦</span><span>✿</span><span>♡</span><span>✧</span><span>❀</span>
+    </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio creativo de desarrollo web">
-  <title>Mi universo creativo</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/style.css">
-</head>
-
-<body>
-
-  <!-- Decoración del fondo -->
-  <div class="decor decor-circle"></div>
-  <div class="decor decor-circle-two"></div>
-  <div class="decor decor-ring"></div>
-  <div class="decor decor-heart">♡</div>
-  <div class="decor decor-sparkle">✦</div>
-  <div class="decor decor-sparkle-two">✧</div>
-  <div class="decor decor-flower">✿</div>
-  <div class="decor decor-star-small">✧</div>
-
-  <!-- ESTRELLA GIGANTE: se conserva su forma y ubicación -->
-  <div class="giant-star" id="giantStar" aria-hidden="true">
-    <svg viewBox="0 0 100 100">
-      <polygon points="50,3 61,35 97,35 68,56 79,91 50,70 21,91 32,56 3,35 39,35" />
-    </svg>
-  </div>
-
-  <main class="main-layout">
-
-    <!-- ENCABEZADO: queda arriba, sobre la estrella y el menú -->
-    <header class="page-header">
-
-      <div class="eyebrow">
-        <span></span>
-        PORTAFOLIO DE DESARROLLO WEB
-        <span class="eyebrow-star">✦</span>
-      </div>
-
-      <div class="hero">
-        <div>
-          <p class="hello">¡Hola! Soy</p>
-          <h1>Elisa Soto<span class="pink">.</span></h1>
-          <p class="subtitle">
-            Desarrolladora web en formación <span>♡</span>
-          </p>
+    <div class="sticker-field" aria-hidden="true"><span class="stk stk-1">♡</span><span class="stk stk-2">✿</span><span class="stk stk-3">✦</span><span class="stk stk-4">☁</span><span class="stk stk-5">❀</span><span class="stk stk-6">♡</span><span class="stk stk-7">✧</span><span class="stk stk-8">🎀</span><span class="stk stk-9">☆</span><span class="stk stk-10">♡</span><span class="stk stk-11">✿</span><span class="stk stk-12">✦</span><span class="stk stk-13">❀</span><span class="stk stk-14">☁</span><span class="stk stk-15">♡</span><span class="stk stk-16">✧</span><span class="stk stk-17">🎀</span><span class="stk stk-18">♡</span></div>
+    <div class="portfolio-topbar">
+      <div class="topbar-copy">
+        <p class="eyebrow">
+          <span></span> PORTAFOLIO DE DESARROLLO WEB <b>✦</b>
+        </p>
+        <p class="hello">¡Hola! Soy</p>
+        <h1>Elisa Soto<span>.</span></h1>
+        <p class="subtitle">Técnico en Programación · Desarrolladora web en formación <span>♡</span></p>
+        <div class="mini-tags">
+          <span>Creatividad</span><span>♡</span><span>Código</span><span>♡</span
+          ><span>Aprendizaje</span>
         </div>
       </div>
-
-      <div class="progress-area">
-        <span id="sectionCounter">01 / 05</span>
-        <div class="progress-track">
-          <div id="progressBar"></div>
-        </div>
-        <span class="progress-star">✦</span>
+      <div class="star-stage" aria-hidden="true">
+        <div class="star-orbit"></div>
+        <svg class="hero-star" viewBox="0 0 300 300">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fff3f8" />
+              <stop offset="55%" stop-color="#ffd3e4" />
+              <stop offset="100%" stop-color="#f7b3cf" />
+            </linearGradient>
+          </defs>
+          <polygon
+            points="150,12 184,105 285,105 203,165 235,270 150,207 65,270 97,165 15,105 116,105"
+            fill="url(#starGradient)"
+            stroke="#f4a9c8"
+            stroke-width="4"
+            stroke-linejoin="round"
+          />
+          <polygon
+            points="150,43 178,119 258,119 194,166 219,244 150,198 81,244 106,166 42,119 122,119"
+            fill="none"
+            stroke="#fff8fc"
+            stroke-width="2"
+            stroke-dasharray="4 7"
+          />
+        </svg>
       </div>
-
-    </header>
-
-    <!-- Navegación solo con figuras y números -->
-    <aside class="sidebar">
-      <p class="nav-caption">✧ MI UNIVERSO ✧</p>
-
-      <nav class="navigation" aria-label="Navegación principal">
-
-        <button class="nav-item active" data-section="sobre-mi" aria-label="01. Sobre mí" aria-pressed="true">
-          <span class="nav-shape heart-shape">01</span>
-        </button>
-
-        <button class="nav-item" data-section="habilidades" aria-label="02. Habilidades" aria-pressed="false">
-          <span class="nav-shape star-shape">02</span>
-        </button>
-
-        <button class="nav-item" data-section="proyectos" aria-label="03. Proyectos" aria-pressed="false">
-          <span class="nav-shape heart-shape">03</span>
-        </button>
-
-        <button class="nav-item" data-section="galeria" aria-label="04. Galería" aria-pressed="false">
-          <span class="nav-shape star-shape">04</span>
-        </button>
-
-        <button class="nav-item" data-section="contacto" aria-label="05. Contacto" aria-pressed="false">
-          <span class="nav-shape heart-shape">05</span>
-        </button>
-
-      </nav>
-
-      <div class="sidebar-note">
-        <span>♡</span>
-        <p>Un universo de ideas, código y creatividad.</p>
+      <div class="topbar-progress">
+        <span id="sectionCounter">01 / 06</span>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <span>✦</span>
       </div>
+    </div>
 
-      <div class="sidebar-decoration">✧ ♡ ✿</div>
-    </aside>
-
-    <!-- Contenido -->
-    <section class="content">
-
-      <!-- 01: SOBRE MÍ -->
-      <article class="panel active" id="sobre-mi">
-        <div class="section-heading">
-          <span class="heading-icon">♡</span>
-          <h2>Un poquito sobre mí</h2>
-        </div>
-
-        <p class="lead">
-          Me gusta transformar ideas en experiencias digitales
-          bonitas, creativas y fáciles de utilizar.
-        </p>
-
-        <p class="description">
-          Actualmente estoy aprendiendo desarrollo web en Skillnest.
-          Me interesa explorar nuevas tecnologías, diseñar interfaces
-          y descubrir todo lo que puedo crear con código.
-          Este portafolio representa mi proceso, mis aprendizajes
-          y los proyectos que iré construyendo en el camino.
-        </p>
-
-        <div class="profile-photo">
-          <img src="static/resources/codigoprincipal.png"
-            alt="código" loading="lazy">
-          <span class="photo-caption">IDEAS QUE SE CONVIERTEN EN REALIDAD ✧</span>
-        </div>
-
-        <div class="chips">
-          <span>♡ Creatividad</span>
-          <span>✧ Curiosidad</span>
-          <span>✿ Aprendizaje</span>
-          <span>✩ Paciencia</span>
-        </div>
-
-        <div class="pink-note">
-          <span>✦</span>
-          <p><b>Mi meta:</b> crecer como desarrolladora y crear proyectos
-            que combinen utilidad, creatividad, personalidad y estetica.</p>
-        </div>
-
-        <div class="quote-decoration">
-          <span>“</span>
-          <p>Estructurando ideas y resolviendo desafíos a través del código</p>
-          <span class="quote-heart">♡</span>
-        </div>
-      </article>
-
-      <!-- 02: HABILIDADES -->
-      <article class="panel" id="habilidades">
-        <div class="section-heading">
-          <span class="heading-icon">✿</span>
-          <h2>Mi caja de herramientas</h2>
-        </div>
-
-        <p class="description">
-          Estas son las tecnologías y herramientas que estoy aprendiendo
-          y utilizando para construir mis proyectos.
-        </p>
-
-
-        <div class="skills-grid">
-
-          <!-- Frontend -->
-          <div class="skill-card">
-            <span class="skill-logo html-logo">5</span>
-            <div>
-              <h3>HTML</h3>
-              <p>Estructura web</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo css-logo">✿</span>
-            <div>
-              <h3>CSS</h3>
-              <p>Estilos y diseño</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo js-logo">JS</span>
-            <div>
-              <h3>JavaScript</h3>
-              <p>Interactividad</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <!-- Backend -->
-          <div class="skill-card">
-            <span class="skill-logo">Py</span>
-            <div>
-              <h3>Python</h3>
-              <p>Programación backend</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo">Fl</span>
-            <div>
-              <h3>Flask</h3>
-              <p>Aplicaciones web</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo">B+</span>
-            <div>
-              <h3>Flask-Bcrypt</h3>
-              <p>Seguridad de contraseñas</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo">J²</span>
-            <div>
-              <h3>Jinja2</h3>
-              <p>Plantillas dinámicas</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <!-- Bases de datos -->
-          <div class="skill-card">
-            <span class="skill-logo">My</span>
-            <div>
-              <h3>MySQL</h3>
-              <p>Base de datos</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo">Py</span>
-            <div>
-              <h3>PyMySQL</h3>
-              <p>Conexión con MySQL</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <!-- Entornos y dependencias -->
-          <div class="skill-card">
-            <span class="skill-logo">P</span>
-            <div>
-              <h3>Pip / Pipenv</h3>
-              <p>Paquetes y entornos</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo">.env</span>
-            <div>
-              <h3>python-dotenv</h3>
-              <p>Variables de entorno</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <!-- Control de versiones -->
-          <div class="skill-card">
-            <span class="skill-logo git-logo">⌘</span>
-            <div>
-              <h3>Git</h3>
-              <p>Control de versiones</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-          <div class="skill-card">
-            <span class="skill-logo github-logo">◉</span>
-            <div>
-              <h3>GitHub</h3>
-              <p>Repositorios en la nube</p>
-            </div>
-            <span class="skill-sparkle">✦</span>
-          </div>
-
-        </div>
-
-
-        <div class="skill-banner">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-            alt="Computador portátil utilizado para trabajar" loading="lazy">
-          <div>
-            <span>MI PROCESO ✧</span>
-            <h3>Aprender, probar y volver a crear.</h3>
-            <p>Cada desafío me ayuda a avanzar un poquito más.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03: PROYECTOS -->
-      <article class="panel" id="proyectos">
-        <div class="section-heading">
-          <span class="heading-icon">✧</span>
-          <h2>Mis proyectos</h2>
-        </div>
-
-        <p class="description">
-          Una selección de ideas que he convertido en proyectos.
-          Cada uno representa un nuevo desafío y aprendizaje.
-        </p>
-
-        <div class="project-filters" aria-label="Filtrar proyectos">
-          <button class="filter-btn active" data-filter="todos">Todos ♡</button>
-          <button class="filter-btn" data-filter="web">Desarrollo web</button>
-          <button class="filter-btn" data-filter="creativo">Creatividad</button>
-        </div>
-
-        <div class="projects-grid">
-
-          <div class="project-card" data-category="web">
-            <div class="project-cover cover-green">
-              <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80"
-                alt="Paisaje verde y montañas" loading="lazy">
-              <span class="cover-label">01 · WEB</span>
-              <span class="cover-symbol">✿</span>
-            </div>
-
-            <div class="project-body">
-              <span class="project-type">PROYECTO WEB</span>
-              <h3>Nova Green</h3>
-              <p>Una propuesta digital sobre sostenibilidad,
-                reciclaje y cuidado del medioambiente.</p>
-
-              <div class="project-tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/" target="_blank" rel="noreferrer">
-                  GitHub ↗
-                </a>
-                <a href="#" class="demo-link">Ver proyecto ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" data-category="creativo">
-            <div class="project-cover cover-pink">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-                alt="Espacio de trabajo creativo" loading="lazy">
-              <span class="cover-label">02 · CREATIVO</span>
-              <span class="cover-symbol">♡</span>
-            </div>
-
-            <div class="project-body">
-              <span class="project-type">DISEÑO Y CREATIVIDAD</span>
-              <h3>Mi próximo proyecto</h3>
-              <p>Reemplaza esta tarjeta con otro trabajo,
-                ejercicio o desafío que hayas realizado.</p>
-
-              <div class="project-tags">
-                <span>HTML</span><span>CSS</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/" target="_blank" rel="noreferrer">
-                  GitHub ↗
-                </a>
-                <a href="#" class="demo-link">Ver proyecto ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" data-category="web">
-            <div class="project-cover cover-purple">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
-                alt="Personas trabajando en un proyecto tecnológico" loading="lazy">
-              <span class="cover-label">03 · EN PROCESO</span>
-              <span class="cover-symbol">✧</span>
-            </div>
-
-            <div class="project-body">
-              <span class="project-type">PRÁCTICA WEB</span>
-              <h3>Proyecto por agregar</h3>
-              <p>Describe qué construiste, qué problema resolviste
-                y qué aprendiste durante el desarrollo.</p>
-
-              <div class="project-tags">
-                <span>JavaScript</span><span>Git</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/" target="_blank" rel="noreferrer">
-                  GitHub ↗
-                </a>
-                <a href="#" class="demo-link">Ver proyecto ↗</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- 04: GALERÍA -->
-      <article class="panel" id="galeria">
-        <div class="section-heading">
-          <span class="heading-icon">♡</span>
-          <h2>Mi inspiración visual</h2>
-        </div>
-
-        <p class="description">
-          Un pequeño rincón para reunir ideas, espacios y detalles
-          que inspiran mi proceso creativo. También puedes usarlo
-          para mostrar capturas de tus trabajos.
-        </p>
-
-        <div class="gallery-grid">
-          <figure class="gallery-item gallery-tall">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85"
-              alt="Computador y espacio de desarrollo" loading="lazy">
-            <figcaption><span>01</span> Creando ideas ✧</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
-              alt="Espacio de trabajo luminoso" loading="lazy">
-            <figcaption><span>02</span> Mi espacio creativo</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
-              alt="Trabajo digital en un portátil" loading="lazy">
-            <figcaption><span>03</span> Aprender haciendo ♡</figcaption>
-          </figure>
-
-          <figure class="gallery-item gallery-wide">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
-              alt="Equipo colaborando en un proyecto" loading="lazy">
-            <figcaption><span>04</span> Ideas que crecen juntas</figcaption>
-          </figure>
-        </div>
-
-        <div class="pink-note">
-          <span>✦</span>
-          <p>Las imágenes son ilustrativas. Puedes reemplazarlas por
-            capturas de tus propios proyectos para personalizar la galería.</p>
-        </div>
-      </article>
-
-      <!-- 05: CONTACTO -->
-      <article class="panel" id="contacto">
-        <div class="section-heading">
-          <span class="heading-icon">♡</span>
-          <h2>¡Hablemos!</h2>
-        </div>
-
-        <div class="contact-illustration">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85"
-            alt="Retrato de una persona" loading="lazy">
-          <span class="contact-sticker">nice to<br>meet you ♡</span>
-        </div>
-
-        <p class="lead">
-          Siempre hay espacio para aprender, compartir ideas y crear algo nuevo.
-        </p>
-
-        <div class="contact-card">
-          <span class="contact-icon">✉</span>
-          <div>
-            <small>MI CORREO PROFESIONAL</small>
-            <b id="emailText">eelisaasotoo@gmail.com</b>
-          </div>
-          <button id="copyEmail" type="button">Copiar</button>
-        </div>
-
-        <a class="linkedin-card" href="https://www.linkedin.com/in/elisa-soto-cornejo-a399883b9/" target="_blank" rel="noreferrer">
-          <span class="linkedin-icon">in</span>
-          <span>
-            <b>Mi perfil de LinkedIn</b>
-            <small>Conectemos profesionalmente</small>
-          </span>
-          <span class="linkedin-arrow">↗</span>
-        </a>
-
-        <div class="final-message">
-          <span>✧</span>
-          <p>Gracias por visitar mi pequeño universo creativo.</p>
+    <main class="main-layout">
+      <aside class="sidebar">
+        <p class="nav-caption">✧ MI UNIVERSO ✧</p>
+        <nav class="navigation" aria-label="Navegación principal">
+          <button
+            class="nav-item active"
+            data-section="sobre-mi"
+            aria-label="Sobre mí"
+            aria-pressed="true"
+          >
+            <span class="nav-shape heart-shape">01</span><small>Sobre mí</small>
+          </button>
+          <button
+            class="nav-item"
+            data-section="habilidades"
+            aria-label="Herramientas"
+            aria-pressed="false"
+          >
+            <span class="nav-shape star-shape">02</span
+            ><small>Herramientas</small>
+          </button>
+          <button
+            class="nav-item"
+            data-section="formacion"
+            aria-label="Formación"
+            aria-pressed="false"
+          >
+            <span class="nav-shape heart-shape">03</span
+            ><small>Formación</small>
+          </button>
+          <button
+            class="nav-item"
+            data-section="proyectos"
+            aria-label="Proyectos"
+            aria-pressed="false"
+          >
+            <span class="nav-shape star-shape">04</span
+            ><small>Proyectos</small>
+          </button>
+          <button
+            class="nav-item"
+            data-section="galeria"
+            aria-label="Inspiración"
+            aria-pressed="false"
+          >
+            <span class="nav-shape heart-shape">05</span
+            ><small>Inspiración</small>
+          </button>
+          <button
+            class="nav-item"
+            data-section="contacto"
+            aria-label="Contacto"
+            aria-pressed="false"
+          >
+            <span class="nav-shape star-shape">06</span><small>Contacto</small>
+          </button>
+        </nav>
+        <div class="sidebar-note">
           <span>♡</span>
+          <p>Un universo de ideas, código y creatividad.</p>
         </div>
-      </article>
+        <div class="sidebar-decoration">✧ ♡ ✿</div>
+      </aside>
 
-      <footer class="footer">
-        <span>HECHO CON <b>♡</b> Y MUCHA CREATIVIDAD</span>
-        <span>© <span id="year"></span> · Elisa</span>
-      </footer>
+      <section class="content">
+        <article class="panel active" id="sobre-mi">
+          <div class="section-heading">
+            <span class="heading-icon">♡</span>
+            <div>
+              <small>01 · UN POQUITO SOBRE MÍ</small>
+              <h2>Conoce mi universo</h2>
+            </div>
+          </div>
+          <p class="lead">
+            Me gusta transformar ideas en experiencias digitales bonitas,
+            creativas y fáciles de utilizar.
+          </p>
+          <p class="description">
+            Soy egresada de Técnico en Programación del Liceo Comercial Vate
+            Vicente Huidobro y actualmente estoy aprendiendo desarrollo web en Skillnest. Me
+            interesa explorar nuevas tecnologías, diseñar interfaces y descubrir
+            todo lo que puedo crear con código. Este portafolio representa mi
+            proceso, mis aprendizajes y los proyectos que iré construyendo en el
+            camino.
+          </p>
+          <div class="about-grid">
+            <figure class="profile-photo">
+              <img
+                src="static/resources/codigoprincipal.png"
+                alt="Código y programación"
+                loading="lazy"
+              />
+              <figcaption>IDEAS QUE SE CONVIERTEN EN REALIDAD ✧</figcaption>
+            </figure>
+            <div class="about-side">
+              <div class="chips">
+                <span>♡ Creatividad</span><span>✧ Curiosidad</span
+                ><span>✿ Aprendizaje</span><span>✩ Paciencia</span><span>♡ Trabajo en equipo</span>
+              </div>
+              <div class="pink-note">
+                <span>✦</span>
+                <p>
+                  <b>Mi meta:</b> realizar mi práctica profesional, crecer como desarrolladora y crear proyectos
+                  que combinen utilidad, creatividad, personalidad y estética.
+                </p>
+              </div>
+              <div class="quote-decoration">
+                <span>“</span>
+                <p>
+                  Estructurando ideas y resolviendo desafíos a través del
+                  código.
+                </p>
+                <b>♡</b>
+              </div>
+              <div class="learning-stamp">
+                <span>✿</span>
+                <div>
+                  <b>Siempre aprendiendo</b
+                  ><small>Un paso a la vez, una idea a la vez.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
-    </section>
-  </main>
+        <article class="panel" id="habilidades">
+          <div class="section-heading">
+            <span class="heading-icon">✿</span>
+            <div>
+              <small>02 · MIS HERRAMIENTAS</small>
+              <h2>Mi caja de herramientas</h2>
+            </div>
+          </div>
+          <p class="description">
+            Explora las tecnologías que estoy aprendiendo y utilizando.
+            ¡Presiona cada botón del computador para conocer un poquito más!
+          </p>
+          <div class="computer-layout">
+            <div class="computer">
+              <div class="computer-top">
+                <span></span><span></span><span></span>
+                <p>elisa@creative-desk: ~</p>
+              </div>
+              <div class="computer-screen">
+                <div class="screen-sidebar">
+                  <span>✿</span><small>MY SKILLS</small><i>01</i><i>02</i
+                  ><i>03</i>
+                </div>
+                <div class="screen-main">
+                  <p class="terminal-label">✦ EXPLORA MIS TECNOLOGÍAS</p>
+                  <h3 id="skillTitle">¡Hola, bienvenida!</h3>
+                  <p id="skillDescription">
+                    Selecciona una tecnología aquí abajo para descubrir cómo la
+                    utilizo en mis proyectos.
+                  </p>
+                  <div class="screen-code">
+                    <span>const</span> learning = <b>"always"</b>;<br /><span
+                      >console</span
+                    >.log(learning); <em>♡</em>
+                  </div>
+                  <div class="skill-buttons">
+                    <button class="skill-button selected" data-skill="bienvenida">
+                      <b>✦</b> Inicio
+                    </button>
+                    <button class="skill-button" data-skill="html">
+                      <b>5</b> HTML
+                    </button>
+                    <button class="skill-button" data-skill="css">
+                      <b>✿</b> CSS
+                    </button>
+                    <button class="skill-button" data-skill="javascript">
+                      <b>JS</b> JavaScript
+                    </button>
+                    <button class="skill-button" data-skill="python">
+                      <b>Py</b> Python
+                    </button>
+                    <button class="skill-button" data-skill="flask">
+                      <b>Fl</b> Flask
+                    </button>
+                    <button class="skill-button" data-skill="mysql">
+                      <b>My</b> MySQL
+                    </button>
+                    <button class="skill-button" data-skill="git">
+                      <b>⌘</b> Git / GitHub
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="computer-bottom"><span></span></div>
+              <div class="computer-base"></div>
+              <div class="keyboard-deck" aria-label="Teclado del computador decorativo">
+                <div class="keyboard-keys" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="trackpad" aria-hidden="true"></div>
+              </div>
+              <p class="computer-caption">MI ESPACIO DE APRENDIZAJE · 2023 – 2026</p>
+              <div class="future-note">
+                ♡
+                <span
+                  >También sé de soporte técnico, hardware y redes LAN. ¡Y me queda
+                  muchísimo por aprender!</span
+                >
+              </div>
+            </div>
+          </div>
+        </article>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        <article class="panel" id="formacion">
+          <div class="section-heading">
+            <span class="heading-icon">✿</span>
+            <div>
+              <small>03 · MI CAMINO</small>
+              <h2>Formación y experiencia</h2>
+            </div>
+          </div>
+          <p class="description">
+            Un resumen breve de lo que he estudiado y de mi experiencia hasta
+            ahora.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-icon">♡</span>
+              <div>
+                <small>EGRESADA</small>
+                <h3>Técnico en Programación</h3>
+                <p>
+                  Liceo Comercial Vate Vicente Huidobro. Formación en
+                  programación, soporte técnico, hardware y redes LAN.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-icon">✦</span>
+              <div>
+                <small>EN CURSO</small>
+                <h3>Desarrollo Web Full Stack Python</h3>
+                <p>
+                  Skillnest. HTML, CSS, JavaScript, Python, Flask, MySQL y más
+                  herramientas para crear aplicaciones web.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-icon">✧</span>
+              <div>
+                <small>EXPERIENCIA</small>
+                <h3>Proyectos y práctica constante</h3>
+                <p>
+                  He desarrollado proyectos web y ejercicios full stack que
+                  puedes ver en la sección de proyectos. Actualmente busco mi
+                  práctica profesional.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pink-note gallery-note">
+            <span>✦</span>
+            <p>
+              <b>Mi meta:</b> realizar mi práctica profesional y seguir
+              creciendo como desarrolladora web.
+            </p>
+          </div>
+        </article>
 
-  <script src="static/js/script.js"></script>
+        <article class="panel" id="proyectos">
+          <div class="section-heading">
+            <span class="heading-icon">✧</span>
+            <div>
+              <small>04 · COSAS QUE HE CREADO</small>
+              <h2>Mis proyectos</h2>
+            </div>
+          </div>
+          <p class="description">
+            Cada proyecto es una pequeña nota de mi proceso: ideas, pruebas,
+            desafíos y nuevos aprendizajes.
+          </p>
+          <div class="projects-grid">
+            <article class="project-card note-pink">
+              <span class="note-tape"></span><span class="note-number">01</span>
+              <img src="static/resources/image.png" alt="Catálogo de alimentos de FeriApp" loading="lazy" />
+              <small>PLATAFORMA WEB</small><h3>FeriApp</h3><p>Plataforma para explorar alimentos locales y conectar clientes con vendedores mediante mensajería.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>MySQL</span></div>
+              <div class="project-links"><a href="https://github.com/lbityis/feriApp_sitio_web" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a> <a href="https://feriapp-sitio-web-xdsj.onrender.com/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+            </article>
+            <article class="project-card note-yellow">
+              <span class="note-tape"></span><span class="note-number">02</span>
+              <img src="static/resources/usuarioscrud.png" alt="Listado y acciones de usuarios" loading="lazy" />
+              <small>PRÁCTICA FULL STACK</small><h3>Usuarios CRUD</h3><p>Aplicación para crear, consultar, editar y eliminar usuarios, organizada con el patrón MVC.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>MySQL</span></div>
+              <div class="project-links"><a href="https://github.com/lbityis/Skillnest_FullStack_Python/tree/main/python/core/Usuarios_CRUD(Core)_Elisa_Soto_2026-09-23/USUARIOS_CRUD_MVC" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div>
+            </article>
+            <article class="project-card note-lilac">
+              <span class="note-tape"></span><span class="note-number">03</span>
+              <img src="static/resources/juegodestino.png" alt="Formulario y resultado del Juego del Destino" loading="lazy" />
+              <small>EXPERIENCIA INTERACTIVA</small><h3>El Juego del Destino</h3><p>Un ejercicio lúdico que transforma los datos de un formulario en un resultado personalizado sobre el destino.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span></div>
+              <div class="project-links"><a href="https://github.com/lbityis/Skillnest_FullStack_Python/tree/main/python/core/juego_destino%20(Core)%20%20Elisa_Soto_02-09-2026" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div>
+            </article>
+            <article class="project-card note-blue">
+              <span class="note-tape"></span><span class="note-number">04</span>
+              <img src="static/resources/pokedex.png" alt="Catálogo de Pokémon con sus características" loading="lazy" />
+              <small>CATÁLOGO WEB</small><h3>Pokédex</h3><p>Catálogo de Pokémon con características y detalles. Una práctica de rutas, datos y plantillas con Flask.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span></div>
+              <div class="project-links"><a href="https://github.com/lbityis/Skillnest_FullStack_Python/tree/main/python/core/pokedex_app_elisa_soto_2026-07-22" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div>
+            </article>
+            <article class="project-card note-peach">
+              <span class="note-tape"></span><span class="note-number">05</span>
+              <div class="project-no-capture" aria-label="CinePedia"><span aria-hidden="true">♫</span><b>CinePedia</b></div>
+              <small>PROYECTO DE CERTIFICACIÓN</small><h3>CinePedia</h3><p>Aplicación comunitaria para compartir películas, consultar estrenos y comentar.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>MySQL</span></div>
+              <div class="project-links"><a href="https://github.com/lbityis/Examen_Certificacion_CinePedia_Soto_Elisa_2026_10_13" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a></div>
+            </article>
+            <article class="project-card note-mint">
+              <span class="note-tape"></span><span class="note-number">06</span>
+              <img src="static/resources/savethecity.gif" alt="Demostración animada del proyecto ambiental" loading="lazy" />
+              <small>PROYECTO GRUPAL</small><h3>EcoQuest / NovaGreen</h3><p>Proyecto educativo sobre reciclaje y cuidado del medioambiente, acompañado por el sitio informativo NovaGreen.</p>
+              <div class="project-tags"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
+              <div class="project-links"><a href="https://github.com/marck068/feria_tp_4c_proyecto_grupo7_EcoQuest" target="_blank" rel="noopener noreferrer">Ver en GitHub ↗</a> <a href="https://marck068.github.io/feria_tp_pagina_informativa_grupo_7_NovaGreen_4C/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+            </article>
+          </div>
+        </article>
+
+        <article class="panel" id="galeria">
+          <div class="section-heading">
+            <span class="heading-icon">♡</span>
+            <div>
+              <small>05 · MI MUNDO VISUAL</small>
+              <h2>Mi inspiración visual</h2>
+            </div>
+          </div>
+          <p class="description">
+            Un pequeño rincón para reunir ideas, espacios y detalles que
+            inspiran mi proceso creativo.
+          </p>
+          <div class="gallery-grid inspiration-grid">
+            <figure class="gallery-item"><img src="static/resources/inspiracion1.jpg" alt="Inspiración: collage de papelería rosada" loading="lazy" /></figure>
+            <figure class="gallery-item"><img src="static/resources/inspiracion2.jpg" alt="Inspiración: escritorio y estética Hello Kitty" loading="lazy" /></figure>
+            <figure class="gallery-item"><img src="static/resources/inspiracion3.jpg" alt="Inspiración: programación y código" loading="lazy" /></figure>
+          </div>
+<div class="pink-note gallery-note"><span>✦</span><p>Mi inspiración también nace de mis propios proyectos: interfaces, código, colores y pequeños detalles que convierten una idea en algo real.</p></div>
+        </article>
+
+        <article class="panel" id="contacto">
+          <div class="section-heading">
+            <span class="heading-icon">♡</span>
+            <div>
+              <small>06 · CONECTEMOS</small>
+              <h2>¡Hablemos!</h2>
+            </div>
+          </div>
+          <div class="contact-layout">
+            <div class="contact-illustration">
+              <img
+                src="static/resources/elisa.jpg"
+                alt="Foto de Elisa Soto"
+                loading="lazy"
+              />
+            </div>
+            <div class="contact-copy">
+              <p class="lead">
+                Siempre hay espacio para aprender, compartir ideas y crear algo
+                nuevo. ¡Estoy buscando mi práctica profesional!
+              </p>
+              <div class="contact-card">
+                <span class="contact-icon">✉</span>
+                <div>
+                  <small>MI CORREO PROFESIONAL</small
+                  ><b id="emailText">eelisaasotoo@gmail.com</b>
+                </div>
+                <button id="copyEmail" type="button">Copiar</button>
+              </div>
+              <a
+                class="linkedin-card"
+                href="https://www.linkedin.com/in/elisa-soto-cornejo-a399883b9/"
+                target="_blank"
+                rel="noreferrer"
+                ><span class="linkedin-icon">in</span
+                ><span
+                  ><b>Mi perfil de LinkedIn</b
+                  ><small>Conectemos profesionalmente</small></span
+                ><span class="linkedin-arrow">↗</span></a
+              >
+            </div>
+          </div>
+          <div class="final-message">
+            <span>✧</span>
+            <p>Gracias por visitar mi pequeño universo creativo.</p>
+            <span>♡</span>
+          </div>
+        </article>
+
+        <footer class="footer">
+          <span>HECHO CON <b>♡</b> Y MUCHA CREATIVIDAD</span
+          ><span>© <span id="year"></span> · Elisa Soto Cornejo</span>
+        </footer>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="static/js/script.js"></script>
+  <div class="mas-stickers" aria-hidden="true"></div>
 </body>
-
 </html>
